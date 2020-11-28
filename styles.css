@@ -1,0 +1,34 @@
+.outer{
+    text-align: center;
+    margin: 100px auto;
+}
+
+.drop{
+    opacity: 0.7;
+
+}
+
+.main-btn{
+    box-shadow: 4px 4px 20px 2px #0069D9,
+    -4px 4px 20px 2px #5596db;
+}
+
+.drop-img{
+    width: 100px;
+}
+
+.drop-i{
+    text-align: center;
+}
+.drop-i:hover{
+    background-color: #ccddf0;
+    transition-duration: 0.4s;
+}
+
+
+body{
+    /* background-image: url("./images/fourth.jpg"); */
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
+}

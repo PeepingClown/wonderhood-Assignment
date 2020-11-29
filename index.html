@@ -14,19 +14,33 @@
                   Select an Image
                 </button>
                 <div class="dropdown-menu drop" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="images/first.jpg" alt="mountain-river"></a>
-                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="images/second.jpg" alt="lagoon"></a>
-                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="images/third.jpg" alt="lake side"></a>
-                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="images/fourth.jpg" alt="grassland"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img myImg" src="images/first.jpg" alt="mountain-river"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img myImg" src="images/second.jpg" alt="lagoon"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img myImg" src="images/third.jpg" alt="lake side"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img myImg" src="images/fourth.jpg" alt="grassland"></a>
                 </div>
               </div>
         </div>
+        <!-- <img id="myImg" src="./images/second.jpg" alt="Snow" style="width:100%;max-width:300px"> -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
 
         <footer class="foot">
             <div class="inner-foot"><h2>Mayanka</h2></div>
         </footer>
         
-        
+        <script src="https://unpkg.com/markerjs"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="./script.js"></script>

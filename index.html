@@ -14,7 +14,7 @@
                   Select an Image
                 </button>
                 <div class="dropdown-menu drop" aria-labelledby="dropdownMenuButton">
-                  <img class="dropdown-item drop-img myImg" src="images/first.jpg" alt="mountain-river">
+                  <img class="dropdown-item drop-img myImg" id="first" src="images/first.jpg" alt="mountain-river">
                   <img class="dropdown-item drop-img myImg" src="images/second.jpg" alt="lagoon">
                   <img class="dropdown-item drop-img myImg" src="images/third.jpg" alt="lake side">
                   <img class="dropdown-item drop-img myImg" src="images/fourth.jpg" alt="grassland">
@@ -34,6 +34,19 @@
 
   <!-- Modal Caption (Image Text) -->
   <div id="caption"></div>
+
+  <div id="markerControls" style="display: none;">
+    <button onclick="addArrow();">add arrow</button>
+    <button onclick="deleteMarker();">delete marker</button>
+    <button onclick="render();">render</button>
+    <button onclick="closeMarkerArea();">close</button>
+  </div>
+
+
+  <div id="markerActivator">
+    <button onclick="showApiMarker(document.getElementById('img01'));">mark</button>
+    
+  </div>
 </div>
 
         <footer class="foot">

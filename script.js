@@ -32,3 +32,44 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+
+
+//Marker.js
+
+
+
+let markerArea;
+
+function showApiMarker(img) {
+    markerArea = new markerjs.MarkerArea(img);
+    markerArea.open();
+    document.getElementById('markerActivator').style.display = 'none';
+    document.getElementById('markerControls').style.display = '';
+}
+
+function addArrow() {
+    if (markerArea) {
+        markerArea.addMarker(markerjs.ArrowMarker);
+    }
+}
+function deleteMarker() {
+    if (markerArea) {
+        markerArea.deleteActiveMarker();
+    }
+}
+function render() {
+    if (markerArea) {
+        markerArea.render((dataUrl) => {
+            const res = document.getElementById("img01");
+            res.src = dataUrl;
+            res.style.display = "";
+        });
+    }
+}
+function closeMarkerArea() {
+    if (markerArea) {
+        markerArea.close();
+    }
+    document.getElementById('markerActivator').style.display = '';
+    document.getElementById('markerControls').style.display = 'none';
+}

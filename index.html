@@ -1,61 +1,80 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Wonderhood-assignment</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./styles.css">
-    </head>
-    <body>
-        <div class="outer">
-            <div class="dropdown">
-                <button class="btn btn-primary btn-lg dropdown-toggle main-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<head>
+	<title>
+		Wonderhood
+	</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" > -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/annotate.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+
+	<div class="outer">
+	 <div class="dropdown">
+                <button class="btn btn-primary btn-lg dropdown-toggle main-btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Select an Image
                 </button>
-                <div class="dropdown-menu drop" aria-labelledby="dropdownMenuButton">
-                  <img class="dropdown-item drop-img myImg" id="first" src="images/first.jpg" alt="mountain-river">
-                  <img class="dropdown-item drop-img myImg" src="images/second.jpg" alt="lagoon">
-                  <img class="dropdown-item drop-img myImg" src="images/third.jpg" alt="lake side">
-                  <img class="dropdown-item drop-img myImg" src="images/fourth.jpg" alt="grassland">
+                <div class="dropdown-menu drop" role="menu" aria-labelledby="dropdownMenu1">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.imgur.com/tXtwrPd.jpeg" alt="mountain-river"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.imgur.com/QguApMA.jpeg" alt="lagoon"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.imgur.com/sduLRvf.jpeg" alt="lake side"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.imgur.com/gVHrZ1A.jpeg" alt="grassland"></a>
                 </div>
-              </div>
-        </div>
-        <!-- <img id="myImg" src="./images/second.jpg" alt="Snow" style="width:100%;max-width:300px"> -->
+			  </div>
+			  <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				Dropdown
+				<span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" style="left: 44.25%;">
+				<li><a href="#">Dropdown link</a></li>
+				<li><a href="#">Dropdown link</a></li>
+			  </ul>
+			</div> -->
+	</div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
-
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
-
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption"></div>
-
-  <div id="markerControls" style="display: none;">
-    <button onclick="addArrow();">add arrow</button>
-    <button onclick="deleteMarker();">delete marker</button>
-    <button onclick="render();">render</button>
-    <button onclick="closeMarkerArea();">close</button>
-  </div>
-
-
-  <div id="markerActivator">
-    <button onclick="showApiMarker(document.getElementById('img01'));">mark</button>
+    <div class="container">
+        <div class="col-12">
+            <div style="margin-top:70px">
+		<div id="myCanvas" style="position:relative"></div>
+            </div>
+            
+        </div>    
+    </div>
     
-  </div>
-</div>
-
-        <footer class="foot">
-            <div class="inner-foot"><h2>Mayanka</h2></div>
-        </footer>
         
-        <script src="https://unpkg.com/markerjs"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="./script.js"></script>
-    </body>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="djaodjin-annotate_extended.js"></script>
+        
+	<!-- <script type="text/javascript" src="javascript/app.js"> -->
+		
+	</script>
+	<script>
+	$(document).ready(function(){
+
+
+
+var t = $(".drop-i").length;
+for(var i=0;i<t;i++){
+	document.getElementsByClassName("drop-i")[i].addEventListener("click", (event) => {
+		$('#myCanvas').annotate({
+		color : 'blue',
+		bootstrap : true,
+		images : [event.target.src]
+	});
+	});
+	
+}
+
+			$(".export-image").click();
+		});
+	</script>
+	
+</body>
 </html>

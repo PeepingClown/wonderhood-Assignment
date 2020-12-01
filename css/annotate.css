@@ -10,9 +10,14 @@
 	background: grey;
 }
 body {
-      background-color: black;  
+      background: url("../images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      
 }
 
+#myCanvas{
+  box-shadow: 0px 8px 20px 4px rgba(0,0,0,0.6);
+}
 
 .annotate-container > [id^=drawingLayer]{
 	position: absolute;
@@ -32,7 +37,12 @@ body {
 }
 
 .main-btn{
+  /* box-shadow: 0px 8px 20px 2px rgb(110, 88, 209); */
+  box-shadow: 0px 8px 20px 2px rgba(0,0,0,0.6);
+}
 
+.main-btn:hover{
+  transition-duration: 0.4s;
 }
 
 .drop-img{
@@ -136,3 +146,5 @@ body {
   .mer{
 	margin-top: -40px;
 }
+
+

@@ -14,34 +14,22 @@
                   Select an Image
                 </button>
                 <div class="dropdown-menu drop" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item1 drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/Y21p4RtT/first.jpg" alt="mountain-river"></a>
-                  <a class="dropdown-item2 drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/W14jHP0P/fourth.jpg" alt="lagoon"></a>
-                  <a class="dropdown-item3 drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/nhwZ8w19/second.jpg" alt="lake side"></a>
-                  <a class="dropdown-item4 drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/Bvr0bLkq/third.jpg
-" alt="grassland"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/Y21p4RtT/first.jpg" alt="mountain-river"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/W14jHP0P/fourth.jpg" alt="lagoon"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/nhwZ8w19/second.jpg" alt="lake side"></a>
+                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/Bvr0bLkq/third.jpg" alt="grassland"></a>
                 </div>
               </div>
-
 	
-
 	</div>
 
+	
 
 
 
-
-
-
-	<div style="margin-top:50px" align="center" >
-		<div id="myCanvas" style="position:relative"></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
+<div style="margin-top:50px" align="center" >
+	<div id="myCanvas" style="position:relative"></div>
+  </div>
 	
 	
 	
@@ -52,6 +40,7 @@
 		$(document).ready(function(){
 			var counter = 0;
 
+			
 			$('#myCanvas').annotate({
 				color: 'blue',
 				bootstrap: true,
@@ -64,29 +53,14 @@
 				}
 			});
 
-			$(".dropdown-item1").click(function(event) {
-									$('#myCanvas').annotate("push", "https://i.postimg.cc/Y21p4RtT/first.jpg");
-				
-			});
-			$(".dropdown-item2").click(function(event) {
-									$('#myCanvas').annotate("push", "https://i.postimg.cc/W14jHP0P/fourth.jpg");
-				
-			});
-			$(".dropdown-item3").click(function(event) {
-									$('#myCanvas').annotate("push", "https://i.postimg.cc/nhwZ8w19/second.jpg");
-				
-			});
-			$(".dropdown-item4").click(function(event) {
-									$('#myCanvas').annotate("push", "https://i.postimg.cc/Bvr0bLkq/third.jpg");
-				
-			});
-
-			$(".exportimage").click(function(event) {
-				$('#myCanvas').annotate("export", {type: "image/jpeg", quality: 0.75},function(d){
-					console.log(d);
-				});
+			var n = document.getElementsByClassName("dropdown-item").length;
+			for(var i=0;i<n;i++){
+				document.getElementsByClassName("dropdown-item")[i].addEventListener("click",(event) => {
+					$("#myCanvas").annotate("push", event.target.src);
+				})
+			}
 		});
-		});
+	
 
 	</script>
 </body>

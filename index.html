@@ -14,53 +14,33 @@
                   Select an Image
                 </button>
                 <div class="dropdown-menu drop" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/Y21p4RtT/first.jpg" alt="mountain-river"></a>
-                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/W14jHP0P/fourth.jpg" alt="lagoon"></a>
-                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/nhwZ8w19/second.jpg" alt="lake side"></a>
-                  <a class="dropdown-item drop-i" href="#"><img class="drop-img" src="https://i.postimg.cc/Bvr0bLkq/third.jpg" alt="grassland"></a>
+						<div class="my-image-selector"></div>
+				</div>
                 </div>
               </div>
-	
-	</div>
-
-	
-
-
-
 <div style="margin-top:50px" align="center" >
 	<div id="myCanvas" style="position:relative"></div>
   </div>
-	
-	
-	
 	<script type="text/javascript" src="vendor/js/jquery.min.js"></script>
 	<script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="djaodjin-annotate.js"></script>
 	<script>
 		$(document).ready(function(){
 			var counter = 0;
-
-			
+		$('#myCanvas').on("annotate-image-added", function(event, id, path){
+				$(".my-image-selector").append("<label><input type=\"radio\" name=\"image-selector\" class=\"annotate-image-select\" value=\"" + path + "\" checked id=\"" + id + "\"><img src=\"" + path + "\" height=\"100\"></label>");
+			});
 			$('#myCanvas').annotate({
 				color: 'blue',
 				bootstrap: true,
-				images: ['https://i.postimg.cc/Y21p4RtT/first.jpg'],
+				images: ['https://i.postimg.cc/Y21p4RtT/first.jpg' , 'https://i.postimg.cc/W14jHP0P/fourth.jpg' , 'https://i.postimg.cc/nhwZ8w19/second.jpg' , 'https://i.postimg.cc/Bvr0bLkq/third.jpg'],
 				onExport: function(image){
 					if ($("#exported-image").length > 0){
 						$("#exported-image").remove();
 					}
-					
 				}
 			});
-
-			var n = document.getElementsByClassName("dropdown-item").length;
-			for(var i=0;i<n;i++){
-				document.getElementsByClassName("dropdown-item")[i].addEventListener("click",(event) => {
-					$("#myCanvas").annotate("push", event.target.src);
-				})
-			}
 		});
-	
 
 	</script>
 </body>
